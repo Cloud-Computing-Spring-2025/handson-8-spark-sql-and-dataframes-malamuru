@@ -153,9 +153,16 @@ A ranked list of the most-used hashtags and their frequencies.
 
 | Hashtag     | Count |
 |-------------|-------|
-| #tech       | 120   |
-| #mood       | 98    |
-| #design     | 85    |
+| #cleanui    | 23    |
+| #love       | 22    |
+| #social     | 20    |
+| #mood       | 19    |
+| #ai         | 19    |
+| #tech       | 19    |
+| #design     | 19    |
+| #fail       | 18    |
+| #bug        | 18    |
+| #ux         | 17    |
 
 ---
 
@@ -170,16 +177,13 @@ Understand how users from different age groups engage with content based on like
 - **Group by AgeGroup**: Calculate average likes and retweets for each age group.
 - **Rank Groups**: Sort the results to highlight the most engaged age group.
 
-**Expected Outcome:**  
-A summary of user engagement behavior categorized by age group.
+**Outcome:**  
 
-**Example Output:**
-
-| Age Group | Avg Likes | Avg Retweets |
-|-----------|-----------|--------------|
-| Adult     | 67.3      | 25.2         |
-| Teen      | 22.0      | 5.6          |
-| Senior    | 9.2       | 1.3          |
+| Age Group | Avg Likes  | Avg Retweets|
+|-----------|------------|-------------|
+| Teen      | 72.25      | 26.09       |
+| Adult     | 66.73      | 29.07       |
+| Senior    | 60.0       | 27.75       |
 
 ---
 
@@ -193,16 +197,13 @@ Evaluate how sentiment (positive, neutral, or negative) influences post engageme
 - **Categorize Posts**: Group posts into Positive (`>0.3`), Neutral (`-0.3 to 0.3`), and Negative (`< -0.3`) sentiment groups.
 - **Analyze Engagement**: Calculate average likes and retweets per sentiment category.
 
-**Expected Outcome:**  
-Insights into whether happier or angrier posts get more attention.
-
-**Example Output:**
+**Outcome:**  
 
 | Sentiment | Avg Likes | Avg Retweets |
 |-----------|-----------|--------------|
-| Positive  | 85.6      | 32.3         |
-| Neutral   | 27.1      | 10.4         |
-| Negative  | 13.6      | 4.7          |
+| Neutral   | 79.25     | 25.71        |
+| Positive  | 64.29     | 27.29        |
+| Negative  | 64.07     | 29.05        |
 
 ---
 
@@ -217,15 +218,19 @@ Find the most influential verified users based on their post reach (likes + retw
 - **Calculate Reach**: Sum likes and retweets for each user.
 - **Rank Users**: Return top 5 verified users with highest total reach.
 
-**Expected Outcome:**  
-A leaderboard of verified users based on audience engagement.
+**Outcome:**  
 
-**Example Output:**
 
 | Username       | Total Reach |
 |----------------|-------------|
-| @techie42      | 1650        |
-| @designer_dan  | 1320        |
+| @social_queen  | 1796        |
+| @calm_mind     | 1443        |
+| @meme_lord     | 1232        |
+| @stream_bot    | 1116        |
+| @critic99      | 766         |
+
+
+
 
 ---
 
