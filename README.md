@@ -2,7 +2,7 @@
 
 ## **Prerequisites**
 
-Before starting the assignment, ensure you have the following software installed and properly configured on your machine:
+Before starting the assignment, ensure we have the following software installed and properly configured on our machine:
 
 1. **Python 3.x**:
    - [Download and Install Python](https://www.python.org/downloads/)
@@ -23,11 +23,6 @@ Before starting the assignment, ensure you have the following software installed
      ```bash
      spark-submit --version
      ```
-
-4. **Docker & Docker Compose** (Optional):
-   - If you prefer using Docker for setting up Spark, ensure Docker and Docker Compose are installed.
-   - [Docker Installation Guide](https://docs.docker.com/get-docker/)
-   - [Docker Compose Installation Guide](https://docs.docker.com/compose/install/)
 
 ## **Setup Instructions**
 
@@ -89,56 +84,20 @@ You can run the analysis tasks either locally or using Docker.
    ls outputs/
    ```
 
-#### **b. Running with Docker (Optional)**
-
-1. **Start the Spark Cluster**:
-   ```bash
-   docker-compose up -d
-   ```
-
-2. **Access the Spark Master Container**:
-   ```bash
-   docker exec -it spark-master bash
-   ```
-
-3. **Navigate to the Spark Directory**:
-   ```bash
-   cd /opt/bitnami/spark/
-   ```
-
-4. **Run Your PySpark Scripts Using `spark-submit`**:
-   ```bash
-   
-   spark-submit src/task1_hashtag_trends.py
-   spark-submit src/task2_engagement_by_age.py
-   spark-submit src/task3_sentiment_vs_engagement.py
-   spark-submit src/task4_top_verified_users.py
-   ```
-
-5. **Exit the Container**:
-   ```bash
-   exit
-   ```
-
-6. **Verify the Outputs**:
-   On your host machine, check the `outputs/` directory for the resulting files.
-
-7. **Stop the Spark Cluster**:
-   ```bash
-   docker-compose down
-   ```
-
 ## **Overview**
 
-In this assignment, you will leverage Spark Structured APIs to analyze a dataset containing employee information from various departments within an organization. Your goal is to extract meaningful insights related to employee satisfaction, engagement, concerns, and job titles. This exercise is designed to enhance your data manipulation and analytical skills using Spark's powerful APIs.
+In this hands-on assignment, we will use Apache Spark and PySpark DataFrames to analyze a fictional social media platform dataset, containing user posts, likes, retweets, and sentiment scores. The goal is to derive meaningful insights such as hashtag trends, audience engagement patterns, sentiment impact, and influencer reach.
+
+This exercise builds our real-world skills in large-scale data transformation and analysis—key for careers in data science, marketing analytics, and social platform engineering.
 
 ## **Objectives**
 
-By the end of this assignment, you should be able to:
+By completing this assignment, we will learn to:
 
-1. **Data Loading and Preparation**: Import and preprocess data using Spark Structured APIs.
-2. **Data Analysis**: Perform complex queries and transformations to address specific business questions.
-3. **Insight Generation**: Derive actionable insights from the analyzed data.
+1. **Load and preprocess structured CSV data using PySpark**
+2. **Use DataFrame operations and Spark SQL for transformations**
+3. **Join, group, filter, and aggregate data efficiently**
+4. **Extract actionable insights related to social media usage**
 
 ## **Dataset**
 
@@ -171,37 +130,9 @@ You will work with a dataset containing information about **100+ users** who rat
 
 ---
 
-### **Sample Data**
-
-Below is a snippet of the `posts.csv`,`users.csv` to illustrate the data structure. Ensure your dataset contains at least 100 records for meaningful analysis.
-
-```
-PostID,UserID,Content,Timestamp,Likes,Retweets,Hashtags,SentimentScore
-101,1,"Loving the new update! #tech #innovation","2023-10-05 14:20:00",120,45,"#tech,#innovation",0.8
-102,2,"This app keeps crashing. Frustrating! #fail","2023-10-05 15:00:00",5,1,"#fail",-0.7
-103,3,"Just another day... #mood","2023-10-05 16:30:00",15,3,"#mood",0.0
-104,4,"Absolutely love the UX! #design #cleanUI","2023-10-06 09:10:00",75,20,"#design,#cleanUI",0.6
-105,5,"Worst experience ever. Fix it. #bug","2023-10-06 10:45:00",2,0,"#bug",-0.9
-```
-
----
-
-```
-UserID,Username,AgeGroup,Country,Verified
-1,@techie42,Adult,US,True
-2,@critic99,Senior,UK,False
-3,@daily_vibes,Teen,India,False
-4,@designer_dan,Adult,Canada,True
-5,@rage_user,Adult,US,False
-```
-
----
-
-
 
 ## **Assignment Tasks**
 
-You are required to complete the following three analysis tasks using Spark Structured APIs. Ensure that your analysis is well-documented, with clear explanations and any relevant visualizations or summaries.
 
 ### **1. Hashtag Trends **
 
@@ -216,10 +147,9 @@ Identify trending hashtags by analyzing their frequency of use across all posts.
 - **Find Top Hashtags**: Identify the top 10 most frequently used hashtags.
 
 
-**Expected Outcome:**  
+**Outcome:**  
 A ranked list of the most-used hashtags and their frequencies.
 
-**Example Output:**
 
 | Hashtag     | Count |
 |-------------|-------|
@@ -299,27 +229,3 @@ A leaderboard of verified users based on audience engagement.
 
 ---
 
-## **Grading Criteria**
-
-| Task                        | Marks |
-|-----------------------------|-------|
-| Hashtag Trend Analysis      | 1     |
-| Engagement by Age Group     | 1     |
-| Sentiment vs Engagement     | 1     |
-| Top Verified Users by Reach | 1     |
-| **Total**                   | **1** |
-
----
-
-## 📬 Submission Checklist
-
-- [ ] PySpark scripts in the `src/` directory  
-- [ ] Output files in the `outputs/` directory  
-- [ ] Datasets in the `input/` directory  
-- [ ] Completed `README.md`  
-- [ ] Commit everything to GitHub Classroom  
-- [ ] Submit your GitHub repo link on canvas
-
----
-
-Now go uncover the trends behind the tweets 📊🐤✨
